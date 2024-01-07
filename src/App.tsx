@@ -1,5 +1,5 @@
-//Styles
-import './App.css'
+//CSS
+import styles from "./App.module.css"
 
 //Components
 import Footer from './components/Footer/Footer'
@@ -10,7 +10,9 @@ function App() {
   return (
     <>
       <Header/>
-      <h1>Conteudo...</h1>
+      <main className={styles.main}>
+        <h1>Conteudo...</h1>
+      </main>
       <Footer/>
     </>
   )
