@@ -1,3 +1,4 @@
+import styles from "./TaskForm.module.css"
 
 interface Props {
   btnText: string
@@ -5,14 +6,14 @@ interface Props {
 
 const TaskForm = ({btnText}: Props) => {
   return (
-    <form>
-      <div>
+    <form className={styles.form}>
+      <div className={styles.input_container}>
         <label>
           Título:
           <input type="text" placeholder="Título da tarefa" />
         </label>
       </div>
-      <div>
+      <div className={styles.input_container}>
         <label>
           Dificuldade:
           <input type="text" placeholder="Dificuldade da tarefa" />
