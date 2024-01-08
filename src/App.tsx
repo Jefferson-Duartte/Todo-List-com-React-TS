@@ -20,6 +20,20 @@ function App() {
     setTaskList(taskList.filter((task => task.id !== id)))
   }
 
+  const hideOrShowModal = (display:boolean) => {
+
+    const modal = document.querySelector("#modal")
+    if(display){
+      	modal!.classList.remove("hide")
+    }else{
+      modal!.classList.add("hide")
+    }
+  }
+
+  const editTask = ():void => {
+    hideOrShowModal(true)
+  }
+
   return (
     <>
       <Modal children={<TaskForm btnText="Editar tarefa" taskList={taskList}/>}/>
@@ -31,7 +45,7 @@ function App() {
         </div>
         <div>
           <h2>Suas tarefas:</h2>
-          <TaskList taskList={taskList} handleDelete={removeTask}/>
+          <TaskList taskList={taskList} handleDelete={removeTask} handleEdit={editTask}/>
         </div>
       </main>
       <Footer/>
